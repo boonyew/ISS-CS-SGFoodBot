@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="app")
 
 app = Flask(__name__)
-API_KEY = "f91c97ff34995539b40868a1e3ae5c84"
+API_KEY = "e6af9356ab628adc421d238f96e6fdda"
 zom = ZomatoAPI(API_KEY)
 
 # **********************
