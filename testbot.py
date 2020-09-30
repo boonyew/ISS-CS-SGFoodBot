@@ -240,18 +240,18 @@ def webhook():
     print("INTENT FIRED : ", intent_name)
 
     if intent_name == "YesCuisineYesLocation" or intent_name == "LocationFirstCuisine":
-        cuisine = req["queryResult"]["outputContexts"][-1]["parameters"]["cuisines"] # CHANGE LIST INDEX FOR DIFFERENT BOTS
-        location  = req["queryResult"]["outputContexts"][-1]["parameters"]["locations"]
+        cuisine = req["queryResult"]["outputContexts"][1]["parameters"]["cuisines"] # CHANGE LIST INDEX FOR DIFFERENT BOTS
+        location  = req["queryResult"]["outputContexts"][1]["parameters"]["locations"]
         location += ", Singapore"
         print(cuisine, location)
         resp_text = YesCuisineYesLocation(cuisine,location)
 
     elif intent_name == "YesCuisineNoLocation":
-        cuisine = req["queryResult"]["outputContexts"][-1]["parameters"]["cuisines"]
+        cuisine = req["queryResult"]["outputContexts"][1]["parameters"]["cuisines"]
         resp_text = YesCuisineNoLocation(cuisine)
 
     elif intent_name == "NoCuisineYesLocation" or intent_name == "LocationFirstAnyCuisine":
-        location  = req["queryResult"]["outputContexts"][-1]["parameters"]["locations"]
+        location  = req["queryResult"]["outputContexts"][1]["parameters"]["locations"]
         location += ", Singapore"
         resp_text = NoCuisineYesLocation(location)
 
